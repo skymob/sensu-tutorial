@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell, :inline => "command -v chef-solo || curl -L https://www.opscode.com/chef/install.sh | bash"
 
+  # Sensu Server
   config.vm.define :sensu_server do |sensu_server_config|
     sensu_server_config.vm.provider "virtualbox" do |v|
       v.customize [
@@ -29,17 +30,23 @@ Vagrant.configure("2") do |config|
     sensu_server_config.vm.network :private_network, ip: "192.168.1.10"
   end
 
+  # Sensu Client
   config.vm.define :sensu_client do |sensu_client_config|
     sensu_client_config.vm.provider "virtualbox" do |v|
       v.customize [
         "modifyvm", :id,
-        "--name", "Sensu Client Stack",
+        "--name", "Sensu Client",
         "--memory", "512"
       ]
     end
     sensu_client_config.vm.box = "centos64"
     # sensu_client_config.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
     sensu_client_config.vm.provision :chef_solo do |chef|
+      chef.json = {
+        "monitor" => {
+          "master_address" => "192.168.1.10"
+          }
+        }
       chef.cookbooks_path = "cookbooks"
       chef.data_bags_path = "data_bags"
       chef.add_recipe "monitor::haproxy"
