@@ -1,0 +1,42 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+
+  config.vm.box = "centos64"
+  config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130427.box"
+
+  config.vm.provision :shell, :inline => "command -v chef-solo || curl -L https://www.opscode.com/chef/install.sh | bash"
+
+  config.vm.define :sensu_server do |sensu_server_config|
+    sensu_server_config.vm.customize [
+      "modifyvm", :id,
+      "--name", "Sensu Stack",
+      "--memory", "1024"
+    ]
+    sensu_server_config.vm.box = "sensu_server"
+    sensu_server_config.vm.forward_port 8080, 8080
+    sensu_server_config.vm.forward_port 9000, 9000 
+    sensu_server_config.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = "cookbooks"
+      chef.data_bags_path = "data_bags"
+      chef.add_recipe "monitor::master"
+      chef.add_recipe "monitor::redis"
+      chef.add_recipe "monitor::rabbitmq"
+    end
+  end
+
+  config.vm.define :sensu_client do |sensu_client_config|
+    sensu_client_config.vm.box = "sensu_client"
+    # sensu_client_config.vm.forward_port 80, 80
+    sensu_client_config.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = "cookbooks"
+      chef.data_bags_path = "data_bags"
+      chef.add_recipe "monitor::haproxy"
+    end
+  end
+
+    sensu_server_config.vm.network :private_network, "192.168.1.10"
+    sensu_client_config.vm.network :private_network, "192.168.1.11"
+
+end
