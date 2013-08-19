@@ -12,3 +12,6 @@ cookbook "sensu",
 
 cookbook "monitor",
   :git => "https://github.com/portertech/chef-monitor.git"
+
+cookbook "sensu-tutorial",
+  :git => "https://github.com/skymob/sensu-tutorial-cookbook.git"
