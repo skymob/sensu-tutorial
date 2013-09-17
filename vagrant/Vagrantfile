@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
       ]
     end
     sensu_server_config.vm.box = "centos64"
-    sensu_server_config.vm.network :forwarded_port, guest: 22, host: 2222, auto_correct: true
+    sensu_server_config.vm.network :forwarded_port, id: 'ssh',  guest: 22, host: 2222, auto_correct: true
     sensu_server_config.vm.network :forwarded_port, guest: 8080, host: 8080, auto_correct: true
     sensu_server_config.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true
     sensu_server_config.vm.provision :chef_solo do |chef|
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
       ]
     end
     sensu_client_config.vm.box = "centos64"
-    sensu_client_config.vm.network :forwarded_port, guest: 22, host: 2223, auto_correct: true
+    sensu_client_config.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2223, auto_correct: true
     # sensu_client_config.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
     sensu_client_config.vm.provision :chef_solo do |chef|
       chef.json = {
