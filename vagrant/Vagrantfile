@@ -19,10 +19,6 @@ Vagrant.configure("2") do |config|
     end
     sensu_server_config.vm.box = "centos64"
     sensu_server_config.vm.hostname = "sensu-server"
-    sensu_server_config.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2222, auto_correct: true
-    sensu_server_config.vm.network :forwarded_port, id: 'sensu-dashboard', guest: 8080, host: 8080, auto_correct: true
-    sensu_server_config.vm.network :forwarded_port, id: 'sensu-api', guest: 4567, host: 4567
-    sensu_server_config.vm.network :forwarded_port, id: 'rabbitmq-management', guest: 15672, host: 15672
     sensu_server_config.vm.provision :chef_solo do |chef|
       chef.cookbooks_path = "cookbooks"
       chef.data_bags_path = "data_bags"
@@ -44,7 +40,6 @@ Vagrant.configure("2") do |config|
     end
     sensu_client_config.vm.box = "centos64"
     sensu_client_config.vm.hostname = "sensu-client"
-    sensu_client_config.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2223, auto_correct: true
     sensu_client_config.vm.provision :chef_solo do |chef|
       chef.json = {
         "monitor" => {
