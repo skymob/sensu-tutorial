@@ -15,7 +15,7 @@ INSTRUCTIONS
 ============
 1. Download or clone this repo to your local machine:
 ```
-git clone git@github.com:skymob/velocity2013.git
+git clone git@github.com:skymob/sensu-tutorial.git
 ```
 
 2. Use Vagrant to provision the VMs:
