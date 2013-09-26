@@ -5,9 +5,11 @@ Course materials from Bethany Erskine's Sensu tutorial, Velocity NYC 2013.
 
 PREREQS
 ===========
-1. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
-3. bundler (`gem install bundler`)
+1. Optional but strongly recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
+2. Optional but also recommended: Ruby version 1.9 or higher
+3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+4. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
+5. bundler (`gem install bundler`)
 
 INSTRUCTIONS
 ============
@@ -54,4 +56,4 @@ ssh -p 2223 vagrant@localhost
 
 TROUBLESHOOTING
 ===============
-Please contact bethany.erskine@gmail.com with any issues.
+Please open a GitHub Issue [in this repository](https://github.com/skymob/velocity2013/issues/).
