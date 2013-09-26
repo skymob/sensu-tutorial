@@ -1,7 +1,7 @@
 Velocity 2013 Sensu Tutorial Materials
 ======================================
 
-Course materials from Bethany Erskine's Sensu tutorial, Velocity NYC 2013. 
+Course materials for Bethany Erskine's tutorial, [Sense and Sensu-bility: Painless Metrics And Monitoring In The Cloud with Sensu](http://velocityconf.com/velocityny2013/public/schedule/detail/30079), at Velocity Conf in NYC on October 14, 2013.
 
 PREREQS
 ===========
@@ -28,7 +28,6 @@ vagrant up
 
 USAGE
 ======
-
 Sensu Dashboard will be available at http://localhost:8080
 
   The client machine IP is 192.168.1.11
@@ -56,4 +55,4 @@ ssh -p 2223 vagrant@localhost
 
 TROUBLESHOOTING
 ===============
-Please open a GitHub Issue [in this repository](https://github.com/skymob/velocity2013/issues/).
+Please open a GitHub Issue [in this repository](https://github.com/skymob/sensu-tutorial/issues/).
