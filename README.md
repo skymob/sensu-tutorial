@@ -36,8 +36,8 @@ Sensu Dashboard will be available at http://192.168.1.10:8080
 
 To SSH into each machine:
 ```
-vagrant ssh sensu-server
-vagrant ssh sensu-client
+vagrant ssh sensu_server
+vagrant ssh sensu_client
 ```
 
 TROUBLESHOOTING
