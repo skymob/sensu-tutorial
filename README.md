@@ -15,6 +15,7 @@ INSTRUCTIONS
 ```
 git clone git@github.com:skymob/velocity2013.git
 ```
+
 2. Use Vagrant to provision the VMs:
 ```
 cd vagrant
@@ -28,8 +29,8 @@ USAGE
 
 Sensu Dashboard will be available at http://localhost:8080
 
-The client machine IP is 192.168.1.11
-The server machine IP is 192.168.1.10
+  The client machine IP is 192.168.1.11
+  The server machine IP is 192.168.1.10
 
 For convenience, you can add to `/etc/hosts` on your local machine:
 ```
