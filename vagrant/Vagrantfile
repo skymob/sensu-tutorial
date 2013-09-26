@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
       chef.add_recipe "sensu-tutorial::vim"
       chef.add_recipe "sensu-tutorial::server"
     end
-    sensu_server_config.vm.network :private_network, ip: "192.168.1.10"
+    sensu_server_config.vm.network :private_network, ip: "10.254.254.10"
   end
 
   # Sensu Client
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     sensu_client_config.vm.provision :chef_solo do |chef|
       chef.json = {
         "monitor" => {
-          "master_address" => "192.168.1.10"
+          "master_address" => "10.254.254.10"
           }
         }
       chef.cookbooks_path = "cookbooks"
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
       chef.add_recipe "sensu-tutorial::iptables_disable"
       chef.add_recipe "sensu-tutorial::client"
     end
-    sensu_client_config.vm.network :private_network, ip: "192.168.1.11"
+    sensu_client_config.vm.network :private_network, ip: "10.254.254.11"
   end
 
 end

@@ -29,10 +29,10 @@ vagrant up
 
 USAGE
 ======
-Sensu Dashboard will be available at http://192.168.1.10:8080
+Sensu Dashboard will be available at http://10.254.254.10:8080 , username "admin" password "secret".
 
-  The client machine IP is 192.168.1.11
-  The server machine IP is 192.168.1.10
+  The client machine IP is 10.254.254.10
+  The server machine IP is 10.254.254.11
 
 To SSH into each machine:
 ```
