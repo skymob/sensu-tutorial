@@ -7,7 +7,7 @@ PREREQS
 ===========
 1. Optional but strongly recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
 2. Ruby (version 1.9 or higher recommended, but should work with 1.8)
-3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads) - 4.2.18 or up recommended
 4. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
 5. bundler (`gem install bundler`)
 
@@ -20,9 +20,10 @@ git clone git@github.com:skymob/sensu-tutorial.git
 
 2. Use Vagrant to provision the VMs:
 ```
+cd sensu-tutorial
 cd vagrant
 bundle install
-librarian-chef install
+bundle exec librarian-chef install
 vagrant up
 ```
 
