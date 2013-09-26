@@ -6,7 +6,7 @@ Course materials from Bethany Erskine's Sensu tutorial, Velocity NYC 2013.
 PREREQS
 ===========
 1. Optional but strongly recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
-2. Optional but also recommended: Ruby version 1.9 or higher
+2. Ruby (version 1.9 or higher recommended, but should work with 1.8)
 3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 4. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
 5. bundler (`gem install bundler`)
