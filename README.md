@@ -5,7 +5,7 @@ Course materials for Bethany Erskine's tutorial, [Sense and Sensu-bility: Painle
 
 PREREQS
 ===========
-1. Optional but strongly recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
+1. Optional but recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
 2. Ruby (version 1.9 or higher recommended, but should work with 1.8)
 3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads) - 4.2.18 or up recommended
 4. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
@@ -42,4 +42,4 @@ vagrant ssh sensu_client
 
 TROUBLESHOOTING
 ===============
-Please open a GitHub Issue [in this repository](https://github.com/skymob/sensu-tutorial/issues/).
+Please open a GitHub Issue [in this repository](https://github.com/skymob/sensu-tutorial/issues/). Please list your platform, OS version, Vagrant version, and Ruby version in the ticket.
