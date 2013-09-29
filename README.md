@@ -7,9 +7,11 @@ PREREQS
 ===========
 1. Optional but recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
 2. Ruby (version 1.9 or higher recommended, but should work with 1.8)
-3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads) - 4.2.18 or up recommended
+3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads) - version 4.2.18 or up 
 4. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
-5. bundler (`gem install bundler`)
+5. git
+6. bundler (`gem install bundler`)
+7. Windows users will need to install any SSH client, [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) recommended
 
 INSTRUCTIONS
 ============
@@ -39,6 +41,8 @@ To SSH into each machine:
 vagrant ssh sensu_server
 vagrant ssh sensu_client
 ```
+
+Windows users: `vagrant ssh` will output further instructions on how to get SSH working. Please see [this document on converting your private key](http://support.cdh.ucla.edu/help/132-file-transfer-protocol-ftp/583-converting-your-private-key-). 
 
 TROUBLESHOOTING
 ===============
