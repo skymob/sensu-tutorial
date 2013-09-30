@@ -2,16 +2,15 @@
   "checks": {
     "ntpd_process": {
       "handlers": [
-        "default"
+        "email"
       ],
       "notification": "NTPd is not running",
       "command": "/etc/sensu/plugins/check-procs.rb -p ntpd -W1",
       "subscribers": [
-        "base"
+        "all"
       ],
-      "interval": 60,
+      "interval": 30,
       "occurrences": 1,
-      "refresh": 86400,
       "likes_cornbread": true
     }
   }
