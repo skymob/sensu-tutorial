@@ -8,7 +8,7 @@ PREREQS
 1. Optional but recommended for Macs: [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 
 2. Ruby (version 1.9 or higher recommended, but should work with 1.8)
 3. [Virtualbox](https://www.virtualbox.org/wiki/Downloads) - version 4.2.18 or up 
-4. [Vagrant](http://downloads.vagrantup.com/) version 1.2.7 or up
+4. [Vagrant](http://downloads.vagrantup.com/) version 1.3.4 or up
 5. git
 6. bundler (`gem install bundler`)
 7. Windows users will need to install any SSH client, [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) recommended
