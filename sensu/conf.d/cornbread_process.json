@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "cornbread_process": {
+      "handlers": [ "email" ],
+      "notification": "We’re out of cornbread!",
+      "command": "/etc/sensu/plugins/check-procs.rb -p cornbread -W1",
+      "subscribers": [ "all" ],
+      "interval": 60,
+      "occurrences": 1,
+      "with_butter": true
+    }
+  }
+}
