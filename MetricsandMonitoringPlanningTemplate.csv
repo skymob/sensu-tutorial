@@ -1,0 +1,26 @@
+Role,System checks,Process checks,Service Checks,System Metrics,Service Metrics,Other,Note,Tested?,,Process check nomenclature:
+  base,disk-usage,,,,,,,,,-W warn-under
+,cpu,,,,,,,,,-w warn-over
+,swap,,,,,,,,,-C crit-under
+,ntp-time,,,,,,,,,-c crit-over
+,zombies,,,,,,,,,
+,RO filesystems,,,,,,,,,
+,RO mounts,,,,,,,,,
+,,chef-client -W1 -w2,,,,,,,,
+,,,,vmstat metrics,,,,,,
+,,,,disk usage metrics,,,,,,
+,,,,cpu metrics,,,,,,
+,,,,memory metrics,,,,,,
+,,,,interface metrics,,,,,,
+,,,,disk performance metrics,,,,,,
+  chefserver,,chef-server -W1,,,,,,,,
+,,rabbitmq -W1,,,,,,,,
+,,chef-solr -W1,,,,,,,,
+,,chef-expander -W1,,,,,,,,
+,,,amqp: tcp 5672,,,,,,,
+,,,web UI: http  80,,,,,,,
+,,,web UI: http 443,,,,,,,
+,,,API: http 9462,,,,,,,
+,,,chef-solr: http 8983 (http://localhost:8983/solr/admin/stats.jsp -q chef),,,,,,,
+,,,,,rabbitMQ queue size,,,,,
+  cronjobs,,crond -W1,,,,,,,,
